@@ -18,16 +18,95 @@ public class Main {
         }
     }
 
+    public void printRightTriangle(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i + 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public void printIsoscelesTriangle(int n) {
+        int asteriskCount = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = n - 1; j > i; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < asteriskCount; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            asteriskCount += 2;
+        }
+    }
+
+    public void printDiamond(int n) {
+        int asteriskCount = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = n - 1; j > i; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < asteriskCount; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            asteriskCount += 2;
+        }
+
+        asteriskCount -= 4;
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < i + 1; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < asteriskCount; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            asteriskCount -= 2;
+        }
+    }
+
+    public void printDiamondWithName(int n, String name) {
+        int asteriskCount = 1;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = n - 1; j > i; j--) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < asteriskCount; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            asteriskCount += 2;
+        }
+
+        System.out.println(name);
+        asteriskCount -= 2;
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < i + 1; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < asteriskCount; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            asteriskCount -= 2;
+        }
+    }
+
+
     public static void main(String[] args) {
         Main main = new Main();
 
         main.printSingleAsterisk();
         main.printHorizontalLine(5);
         main.printVerticalLine(5);
-//        main.printRightTriangle(5);
-//        main.printIsoscelesTriangle(5);
-//        main.printDiamond(5);
-//        main.printDiamondWithName(3, "arun");
+        main.printRightTriangle(5);
+        main.printIsoscelesTriangle(5);
+        main.printDiamond(5);
+        main.printDiamondWithName(3, "arun");
 //        main.fizzBuzz();
 //        System.out.println(main.generate(625));
     }
