@@ -96,6 +96,20 @@ public class Main {
         }
     }
 
+    public void fizzBuzz() {
+        for (int i = 1; i < 100; i++) {
+            if((i % 3 == 0) && (i % 5 == 0)) {
+                System.out.println("FizzBuzz");
+            } else if(i % 3 == 0) {
+                System.out.println("Fizz");
+            }
+            else if(i % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+        }
+    }
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -107,7 +121,7 @@ public class Main {
         main.printIsoscelesTriangle(5);
         main.printDiamond(5);
         main.printDiamondWithName(3, "arun");
-//        main.fizzBuzz();
+        main.fizzBuzz();
 //        System.out.println(main.generate(625));
     }
 }
