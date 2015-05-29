@@ -1,5 +1,9 @@
 package com.thoughtworks.main;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public void printSingleAsterisk() {
@@ -98,17 +102,37 @@ public class Main {
 
     public void fizzBuzz() {
         for (int i = 1; i < 100; i++) {
-            if((i % 3 == 0) && (i % 5 == 0)) {
+            if ((i % 3 == 0) && (i % 5 == 0)) {
                 System.out.println("FizzBuzz");
-            } else if(i % 3 == 0) {
+            } else if (i % 3 == 0) {
                 System.out.println("Fizz");
-            }
-            else if(i % 5 == 0) {
+            } else if (i % 5 == 0) {
                 System.out.println("Buzz");
             } else {
                 System.out.println(i);
             }
         }
+    }
+
+    public List<Integer> generate(int n) {
+        List<Integer> primeFactors = new ArrayList<>();
+        while(n % 2 == 0) {
+            primeFactors.add(2);
+            n /= 2;
+        }
+
+        for (int i = 3; i < Math.sqrt(n); i += 2) {
+            while(n % i == 0) {
+                primeFactors.add(i);
+                n /= i;
+            }
+        }
+
+        if(n > 1) {
+            primeFactors.add(n);
+        }
+
+        return primeFactors;
     }
 
     public static void main(String[] args) {
@@ -122,6 +146,6 @@ public class Main {
         main.printDiamond(5);
         main.printDiamondWithName(3, "arun");
         main.fizzBuzz();
-//        System.out.println(main.generate(625));
+        System.out.println(main.generate(30));
     }
 }
