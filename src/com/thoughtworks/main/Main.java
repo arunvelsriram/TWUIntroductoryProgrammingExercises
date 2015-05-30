@@ -1,8 +1,7 @@
 package com.thoughtworks.main;
 
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -114,8 +113,8 @@ public class Main {
         }
     }
 
-    public List<Integer> generate(int n) {
-        List<Integer> primeFactors = new ArrayList<>();
+    public Set<Integer> generate(int n) {
+        Set<Integer> primeFactors = new HashSet<>();
         while(n % 2 == 0) {
             primeFactors.add(2);
             n /= 2;
@@ -146,6 +145,7 @@ public class Main {
         main.printDiamond(5);
         main.printDiamondWithName(3, "arun");
         main.fizzBuzz();
-        System.out.println(main.generate(30));
+        System.out.println(main.generate(1));
+        System.out.println(main.generate(625));
     }
 }
